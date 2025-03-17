@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //fetch dos produtos e armazenamento na variavel global
     fetch("../Dados/Loja.json")
     .then((response) => response.json())
-    .then((data)=> {
+    .then((data) => {
         produtos = data
         const produtosContainer = document.getElementById("produtos-container");
     
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const card = document.createElement("div")
             card.className = "card"
             card.style.width = "18rem"
+            card.style.margen = "10px"
 
             const imagem = document.createElement("img")
             imagem.src = produto.imagem
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const cardTitle = document.createElement("h5")
             cardTitle.className = "card-title"
-            cardTitle.textContent = produto.produto
+            cardTitle.textContent = produto.descricao
 
             const cardText = document.createElement("p")
             cardText.className = "card-text"
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             btnAdicionarAoCarrinho.href = '#'
             btnAdicionarAoCarrinho.className = "btn btn-primary btn-adicionar-ao-carrinho"
             btnAdicionarAoCarrinho.setAttribute("data-indice", index )
+            btnAdicionarAoCarrinho.textContent = "Adicionar ao carrinho"
 
             cardBody.appendChild(cardTitle)
             cardBody.appendChild(cardText)
@@ -65,6 +67,5 @@ document.addEventListener("DOMContentLoaded", function() {
         carrinho.push(produtoSelecionado)
         localStorage.setItem("carrinho", JSON.stringify(carrinho))
         alert("produto adicionado")
-        console.log(produtos)
     })
 })

@@ -1,15 +1,13 @@
 :root{
-    --claro: rgb(171, 171, 171);
-    --escuro: rgb(255, 0, 0);
+    --branco: #ffffff;
+    --escuro: #1100ff;
 }
 
-
 *{
-
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -18,21 +16,28 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--escuro);
-    color: var(--claro);
+    background-color:var(--escuro);
+    color: var(--branco)
 }
 
 .container{
-
-    border: 2px, solid var(--claro);
-    border-radius: 10px;
+    border: 2px solid var(--branco);
     padding: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2vh;
+    position: relative;
+    padding-top: 70px;
+}
 
+.img-logo{
+    position: absolute;
+    top: -20%;
+    border-radius: 100%;
+    border: 3px solid aliceblue;
 }
 
 input, button{
@@ -40,60 +45,59 @@ input, button{
     border-radius: 999px;
     border: none;
     background-color: transparent;
-    color: var(--claro);
-    border: 2px solid var(--claro);
+    color: var(--branco);
+    border: 2px solid var(--branco);
     width: 100%;
+}
 
+button{
+    transition: all 200ms ease-in-out;
 }
 
 button:hover{
-
-    transition: all 200ms, ease-in-out;
-
+    color: var(--escuro);
+    background-color: var(--branco);
+    cursor: pointer;
 }
 
 .key{
     position: absolute;
     right: 10px;
     top: 8px;
-    opacity: 0.7;           
+    opacity: 0.7;
+    transition: all 200ms ease-in-out;
 }
 
 .key:hover{
-
     cursor: pointer;
     opacity: 1;
     transform: scale(1.2) rotate(90deg);
-
 }
 
 .error-div{
-
     display: none;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2w;
-    width: 90%;
+    gap: 2vw;
+    width: 50%;
     min-width: 300px;
-    background-color: rgb(116, 177, 230);
+    background-color: rgb(255, 0, 38);
     color: var(--escuro);
     padding: 5px;
     position: absolute;
     bottom: 10px;
-    border-radius: 1000px;
-
+    border-radius: 999px;
 }
 
 .error-div button{
-
     width: 100px;
     background-color: var(--escuro);
-    border: 2px solid var(var(--escuro));
+    border: 2px solid var(--escuro);
 }
 
 .error-div button:hover{
     width: 100px;
-    background-color: var(--claro);
-    border: 2px solid var(--escuro);
+    background-color: var(--branco);
+    border: 2px solid var(--branco);
 }
-
